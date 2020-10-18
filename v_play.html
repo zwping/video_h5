@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>视频</title>
+    <link href="https://vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.8.2/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <style type="text/css">
+        .vid-wrap {
+            width: 100%;
+            background: #000;
+            position: relative;
+            padding-bottom: 56.25%;
+            /*需要用padding来维持16:9比例,也就是9除以16*/
+            height: 0;
+        }
+
+        .vid-wrap video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div class="vid-wrap">
+        <video id="video" class="video-js">
+            <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
+        </video>
+    </div>
+</body>
+
+</html>
+<script>
+    // 获取url参数
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) { return pair[1]; }
+        }
+        return (false);
+    }
+    title = decodeURI(getQueryVariable('title'))
+    url = getQueryVariable("url")
+    document.getElementsByTagName("title")[0].innerText = title; // 设置网页title
+
+    var s = document.createElement("source")
+    s.src = url
+    // s.src = 'http://vjs.zencdn.net/v/oceans.mp4'
+    var v = document.getElementById("video")
+    // v.appendChild(s)
+
+    var options = {
+        muted: false,
+        controls: true,
+        loop: false,
+        preload: 'auto',
+        autoplay: true,
+        playbackRates: [0.5, 1.0, 1.5, 2.0],
+        // poster: '',
+        sources: [ // src
+            {
+                src: getQueryVariable('url'),
+                // src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+                // type: 'video/mp4',
+            },
+        ],
+        aspectRatio: '16:9',
+        language: 'en',
+    }
+    var player = videojs('video', options, function () {
+        console.log('播放器准备好了')
+        console.log(this.getCache())
+        this.on('loadstart', function() {
+            // console.log('开始load')
+        })
+        this.on('loadeddata', function() {
+            // console.log('视频源数据加载完成')
+            // this.play();
+            this.currentTime(Cookies.get(url)) // 历史播放
+            // console.log(Cookies.get(url))
+        })
+        this.on('loadeddata', function() {
+            // console.log('渲染播放画面')
+        })
+        this.on('progress', function() {
+            console.log('正在缓冲...')
+        })
+        this.on('timeupdate', function() {
+            // console.log(this.currentTime())
+            Cookies.set(url, this.currentTime())
+        })
+        this.on('ended', function () {
+            console.log('播放完成')
+        })
+    })
+</script>

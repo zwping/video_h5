@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>视频</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <ul id="ull">
+    </ul>
+</body>
+
+
+</html>
+<script>
+    json = [
+        {
+            'title': '半是蜜糖半是伤-22',
+            'url': 'https://zwping.oss-cn-shenzhen.aliyuncs.com/video/%E5%8D%8A%E6%98%AF%E8%9C%9C%E7%B3%96%E5%8D%8A%E6%98%AF%E4%BC%A4/%E5%8D%8A%E6%98%AF%E8%9C%9C%E7%B3%96%E5%8D%8A%E6%98%AF%E4%BC%A422.mp4',
+        },
+        {
+            'title': '半是蜜糖半是伤-21',
+            'url': 'https://zwping.oss-cn-shenzhen.aliyuncs.com/video/%E5%8D%8A%E6%98%AF%E8%9C%9C%E7%B3%96%E5%8D%8A%E6%98%AF%E4%BC%A4/%E5%8D%8A%E6%98%AF%E8%9C%9C%E7%B3%96%E5%8D%8A%E6%98%AF%E4%BC%A421.mp4',
+        },
+        {
+            'title': '半是蜜糖半是伤-20',
+            'url': 'https://zwping.oss-cn-shenzhen.aliyuncs.com/video/%E5%8D%8A%E6%98%AF%E8%9C%9C%E7%B3%96%E5%8D%8A%E6%98%AF%E4%BC%A4/%E5%8D%8A%E6%98%AF%E8%9C%9C%E7%B3%96%E5%8D%8A%E6%98%AF%E4%BC%A420.mp4',
+        },
+        {
+            'title': '半是蜜糖半是伤-19',
+            'url': 'https://zwping.oss-cn-shenzhen.aliyuncs.com/video/%E5%8D%8A%E6%98%AF%E8%9C%9C%E7%B3%96%E5%8D%8A%E6%98%AF%E4%BC%A4/%E5%8D%8A%E6%98%AF%E8%9C%9C%E7%B3%96%E5%8D%8A%E6%98%AF%E4%BC%A419.mp4',
+        },
+    ]
+    var ul = document.getElementById('ull')
+    for (const i in json) {
+        if (json.hasOwnProperty(i)) {
+            const ob = json[i];
+            var li = document.createElement('li')
+            li.innerHTML = "<h1><a href='v_play.html?title="+ob['title']+"&url="+ob['url']+"'>"+ob['title']+"</a></h1>"
+            ul.appendChild(li)
+        }
+    }
+
+</script>

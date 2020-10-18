@@ -1,0 +1,1 @@
+scp -r /Users/feiyan/zwping/v_zwping root@47.110.68.119:/home/
