@@ -7,10 +7,9 @@
 
 ### 网站更新
 ```
-rsync -avP /Users/feiyan/zwping/v_zwping --exclude .git/ --exclude .DS_Store root@47.110.68.119:/home/
+rsync -avP /Users/feiyan/zwping/v_zwping --exclude .git/ --exclude .DS_Store --exclude README.md root@47.110.68.119:/home/
 ```
 
 ### 网站指数
 
-[整体指数](http://dwz.date/cU4b)
-[事件分析](http://dwz.date/cU4e) 切换日期可直观看到热播电视
+[网站指数](https://analytics.google.com/analytics/web)
