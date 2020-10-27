@@ -1,9 +1,8 @@
 // 基础插件 GA + Bootstrap
 
 /////////// GA https://analytics.google.com/analytics/web  ///////////
-// <!-- Global site tag (gtag.js) - Google Analytics -->
-document.write("<script async src='https://www.googletagmanager.com/gtag/js?id=G-Y309WS6EHT'></script>")
-document.write("<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Y309WS6EHT');</script>")
+// http://mta.qq.com
+document.write("<script src='//pingjs.qq.com/h5/stats.js?v2.0.4' name='MTAH5' sid='500732112' cid='500732113'></script>")
 
 /////////// Bootstrap /////////// 
 // 核心 CSS 文件

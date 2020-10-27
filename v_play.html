@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
@@ -36,7 +35,6 @@
     </div>
 </body>
 
-</html>
 <script>
     // 获取url参数
     function getQueryVariable(variable) {
@@ -92,15 +90,16 @@
         })
         this.on('progress', function () {
             console.log('正在缓冲...')
-            gtag('event', 'play_loading');
+            MtaH5.clickStat('play_loading',{'d':title+'_'+this.currentTime})
         })
         this.on('timeupdate', function () {
             // console.log(this.currentTime())
             Cookies.set(url, this.currentTime())
-            gtag('event', 'playing');
+            MtaH5.clickStat('playing',{'d':title+'_'+this.currentTime})
         })
         this.on('ended', function () {
             console.log('播放完成')
         })
     })
 </script>
+</html>
