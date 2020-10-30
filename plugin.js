@@ -2,7 +2,7 @@
 
 /////////// GA https://analytics.google.com/analytics/web  ///////////
 // http://mta.qq.com
-document.write("<script src='//pingjs.qq.com/h5/stats.js?v2.0.4' name='MTAH5' sid='500732112' cid='500732113'></script>")
+document.write("<script async src='//pingjs.qq.com/h5/stats.js?v2.0.4' name='MTAH5' sid='500732112' cid='500732113'></script>")
 
 /////////// Bootstrap /////////// 
 // 核心 CSS 文件

@@ -25,6 +25,8 @@
             height: 100%
         }
     </style>
+    <script src="https://unpkg.com/video.js@7.3.0/dist/video.min.js"></script>
+    <script src="newskin.js"></script>
 </head>
 
 <body>
@@ -90,12 +92,12 @@
         })
         this.on('progress', function () {
             console.log('正在缓冲...')
-            MtaH5.clickStat('play_loading',{'d':title+'_'+this.currentTime})
+            MtaH5.clickStat('play_loading',{'d':title+'_'+this.currentTime()})
         })
         this.on('timeupdate', function () {
             // console.log(this.currentTime())
             Cookies.set(url, this.currentTime())
-            MtaH5.clickStat('playing',{'d':title+'_'+this.currentTime})
+            MtaH5.clickStat('playing',{'d':title+'_'+this.currentTime()})
         })
         this.on('ended', function () {
             console.log('播放完成')

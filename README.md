@@ -13,3 +13,4 @@ rsync -avP /Users/feiyan/zwping/v_zwping --exclude .git/ --exclude .DS_Store --e
 ### 网站指数
 
 [网站指数](https://mta.qq.com/h5/base/ctr_realtime_data?app_id=500732112)
+[事件指数](https://mta.qq.com/h5/visitor/ctr_button_stat?app_id=500732112)
